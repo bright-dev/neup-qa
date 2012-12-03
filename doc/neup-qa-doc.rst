@@ -109,10 +109,16 @@ The code must be stable for a comprehensive user's guide.
 
 Developer Guides
 ================
-Developer guides are very similar to user's guides except that they assume a
-basic mastery of the project.  They are typically for people who want to *become*
-developers on a project rather than for existing developers.  They are probably 
-most important for code projects that have plugin architectures and where the
+Assume a basic mastery of the project.  
+
+.. break
+
+They are typically for people who want to *become*
+developers on a project rather than for existing developers.  
+
+.. break
+
+Most important for code projects that have plugin architectures and where the
 line between user and developer is less well defined.
 
 **Examples:** `Android`_, `Python`_.
@@ -123,18 +129,17 @@ line between user and developer is less well defined.
 
 Self-Documenting Code
 =====================
-Much like in testing where you can simply write perfect code the first time, 
-there is an analogous philosophy is documentation.  This is the philosophy of
-`self-documenting code`_.  This ethos makes the claim that it is often 
-possible to write code in such a way that new readers can understand what the
+The `self-documenting code`_ claim is that it is often 
+possible to write code such that new readers can understand what the
 code does simply by reading it.  Therefore, no extra documentation is required.
 It is all there in the code itself.
 
-While there are obvious pitfalls with this approach (assumed knowledge on the 
-reader's behalf, unavoidable complexities, etc) there are some merits.  By 
-having meaningful naming conventions and structure it does become possible to
-infer a lot about a code just by glancing at it.  Coding standards come from the
-same desire to have readable software.  
+.. break
+
+Obvious pitfalls, but some merits in terms having meaningful naming conventions,
+structure, and overall readable software.  
+
+.. break
 
 However using this documentation strategy exclusively is *highly* inadvisable.
 
