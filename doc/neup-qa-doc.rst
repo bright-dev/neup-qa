@@ -272,14 +272,72 @@ Automatic documentation is the powerful concept that the comments and docstrings
 that the developer has already written can be scraped from the code base and 
 placed on a website or into a user's guide.  
 
+.. break
+
 This significantly reduces the overhead
 of having to write and maintain may documents which contain effectively the same 
 information. 
 
-Probably the three most popular auto-doc projects are `javadoc`_ for Java, 
+.. break
+
+Popular auto-doc projects are `javadoc`_ for Java, 
 `dOxygen`_ for most compiled languages, and `sphinx`_ for Python.
 
 .. _javadoc: http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html
 .. _dOxygen: http://www.stack.nl/~dimitri/doxygen/
 .. _sphinx: http://sphinx.pocoo.org/
 
+
+Reproducibility
+================================
+* To satisfy the "Laboratory Notebook" requirement a version control system 
+  will be used through out the duration of this project.
+
+.. break
+
+* Version control is the software engineering way a documenting and managing every 
+  change that occurs in a code base over time.  
+
+.. break
+
+* The *de facto* standard in contemporary scientific computing is git with mirror
+  repositories hosted publicly at `github.com <https://github.com>`_.
+
+
+Replication
+================
+* To ensure replication, both the code and the documentation will be continuously 
+  updated according to the methods just discussed.
+
+.. break
+
+* A public website for API documentation, Developer's Guide, and User's Guide will
+  will developed and maintained with the aid of auto-documentation tools.
+
+.. break
+
+* A PDF of the user's guide will also be made available in addition to the web form.
+  Peer-reviewed articles related to the methods will also be published.
+
+Website Examples
+===================
+
+* Repository: `<https://github.com/bright-dev/bright>`_
+
+* HTML Documentation: `<http://bright-dev.github.com/>`_
+
+.. image:: img/bright-doc.png
+    :scale: 30%
+
+
+Final Note & Questions
+=======================
+**Note:** *This strategy is effectively the same as the one pursued in other NEUP 
+funded projects.*
+
+.. break
+
+
+.. container:: main-title
+
+    Questions?
