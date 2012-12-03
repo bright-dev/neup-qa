@@ -199,12 +199,23 @@ Comments shouldn't simply repeat what the code is doing.
 API Documentation
 =================
 The application programming interface (API) is the definition of the protocol that 
-two pieces of code may use to interact with one another.  Consider the case of 
+two pieces of code may use to interact with one another.  
+
+.. break
+
+Consider the case of 
 functions.  All functions have a function signature which specifies how many 
-arguments they accept and their return values.  This signature along with the 
-module name and function name is the API.  (The function object/pointer itself 
+arguments they accept and their return values.  
+
+.. break
+
+This signature along with the 
+module name and function name is the API.  
+(The function object/pointer itself 
 is the implementation and is independent of the abstract API.)
 
+API Documentation
+=================
 Just because you have an argument list, however, does not imply that the meaning
 of the arguments is known.  For example:
 
@@ -213,19 +224,34 @@ of the arguments is known.  For example:
     def f(a, b=10):
         ...
 
-We know that ``f()`` accepts two argument ``a`` and ``b`` and that ``b`` should probably
-be an integer.  But what does ``f()`` actually do?  What do these arguments mean in this
-context?
+We know that ``f()`` accepts two argument ``a`` and ``b`` and that ``b`` should 
+probably be an integer.  But what does ``f()`` actually do?  What do these arguments 
+mean in this context?
 
-Python allows the user to define API documentation right at the function, class, module, 
-or variable definition.  Every Python object may have an ``__doc__`` attribute which is a string 
-representation of the API docs.   This is known as a *docstring*.  `PEP257`_ describes
-the conventions for docstrings.  The most important of these is that simple things should 
-have simple docstrings.
+API Documentation
+=================
+Python allows the user to define API documentation right at the function, class, 
+module, or variable definition.  
 
-Right below a definition, if the first non-comment, non-whitespace line is an 
-unassigned string literal, then this string is automatically loaded in as the docstring.
-It is this docstring which then read by the ``help()`` built-in or the ``?`` in IPython.
+.. break
+
+Every Python object may have an ``__doc__`` attribute which is a string 
+representation of the API docs.   This is known as a *docstring*.  
+
+.. break
+
+Simple things should have simple docstrings.
+
+.. break
+
+Most Python docstrings are written in a markup language called 
+`reStructuredText`_ (rST).
+
+.. _reStructuredText: http://sphinx.pocoo.org/rest.html
+
+API Documentation
+=================
+For example,
 
 .. code-block:: python
 
@@ -240,81 +266,20 @@ It is this docstring which then read by the ``help()`` built-in or the ``?`` in 
             print "There was a problem evaluating the number list."
         return total/length
 
-
-    def fib(n):
-        """Determines the nth Fibonacci number where n is 
-        a non-negative integer.
-        """
-        if n < 0 or int(n) != n:
-            return NotImplemented
-        elif n == 0 or n == 1:
-            return n
-        else:
-            return fib(n - 1) + fib(n - 2)
-        
-    print help(mean)
-    print fib.__doc__
-
-Most Python docstrings are written in a markup language called `reStructuredText`_ (rST).
-It is designed to be easy to read, extensible, and provide enough natural-looking syntax
-to be able to render nicely.  For example, our toaster docstring might look like:
-
-.. code-block:: python
-
-    def toast(slices, toastiness, msg=None):
-        """Toast some bread.
-
-        Parameters
-        ----------
-        slices : sequence of instance of partial bread
-            Slices to toast to toastiness level
-        toastiness : int
-            The desired toaster setting
-        msg : str, optional
-            A message for the toaster's usage log.
-
-        """
-        # make sure the toaster has the right setting
-        toastiness = int(toastiness) if 0 < toastiness else 5
-
-        print "Engage the bread warming!"
-        for slice if slices:
-            slice.toast(toastiness)
-
-        # log the message, making a default if needed
-        if msg is None:
-            msg = "Toasted to level {}".format(toastiness)
-        logging.info(msg)
-
-.. _PEP257: http://www.python.org/dev/peps/pep-0257/
-.. _reStructuredText: http://sphinx.pocoo.org/rest.html
-
-
 Auto-Documentation
 ==================
 Automatic documentation is the powerful concept that the comments and docstrings
 that the developer has already written can be scraped from the code base and 
-placed on a website or into a user's guide.  This significantly reduces the overhead
+placed on a website or into a user's guide.  
+
+This significantly reduces the overhead
 of having to write and maintain may documents which contain effectively the same 
 information. 
 
 Probably the three most popular auto-doc projects are `javadoc`_ for Java, 
 `dOxygen`_ for most compiled languages, and `sphinx`_ for Python.
 
-You can build the sphinx documentation by running the following command and then 
-navigating to the browser::
-
-    make html
-
-Note, that sphinx also allows you to build to other front ends, such as LaTeX.
-
-**Example:** Let's take a tour of sphinx now!
-
 .. _javadoc: http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html
 .. _dOxygen: http://www.stack.nl/~dimitri/doxygen/
 .. _sphinx: http://sphinx.pocoo.org/
 
-Exercise
-==================
-Add docstrings to the functions in the ``close_line.py`` module.  Then, using sphinx, 
-generate a website which auto-documents this module. 
