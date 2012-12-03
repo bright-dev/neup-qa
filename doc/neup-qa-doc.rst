@@ -150,14 +150,25 @@ Code Comments
 =============
 Every language has a special character (or two) which indicate to the parser, 
 compiler, or interpreter that whatever comes after or between these characters
-should be ignored.  This allows the author to write annotate and explain the 
-code that they are writing *right at the point that they are writing it!*  This 
-is especially helpful if something weird, obtuse, or obscure is about to happen
-because it gives the author a chance to explain themselves to future developers
+should be ignored.  
+
+.. break
+
+Allows the author to annotate and explain the 
+code that they are writing *right at the point that they are writing it!*  
+
+.. break
+
+Helpful if something weird, obtuse, or obscure is about to happen
+and the author has a chance to explain themselves to future devs
 (often themselves in 1, 2, 6 months).
 
-The best part is that you can put literally *anything* in comments: publication 
-citations, ASCII art, messages to lost loves, and threats to your collaborators.
+Code Comments
+=============
+Literally *anything* in comments: publication citations, ASCII art, messages to lost 
+loves, and warnings to other developers, etc.
+
+.. break
 
 In Python, the comment character is the hash symbol ``#``.  The following example
 shows how you might help explain a toaster:
@@ -167,21 +178,12 @@ shows how you might help explain a toaster:
     def toast(slices, toastiness, msg=None):
         # make sure the toaster has the right setting
         toastiness = int(toastiness) if 0 < toastiness else 5
-
         print "Engage the bread warming!"
-        for slice if slices:
-            slice.toast(toastiness)
 
-        # log the message, making a default if needed
-        if msg is None:
-            msg = "Toasted to level {}".format(toastiness)
-        logging.info(msg)
-
-However, it is certainly possible to over-document your code with comments.  
-Comments should never simply repeat what the code itself is doing.  The goal is to 
-strike the right balance.  The appropriate ratio changes with language.  (Typically
-higher level languages have greater functionality per line and so have more comments.)
-Try to avoid the following:
+Code Comments
+=============
+It is possible to over-document code with comments.  
+Comments shouldn't simply repeat what the code is doing.
 
 .. code-block:: python
 
@@ -193,10 +195,6 @@ Try to avoid the following:
 
     # Add one to a
     a = a + 1
-
-    # stopping excessive comments
-    self.fall_on_sword()
-
 
 API Documentation
 =================
