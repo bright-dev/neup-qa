@@ -329,6 +329,22 @@ Website Examples
 .. image:: img/bright-doc.png
     :scale: 30%
 
+Take Away Points
+=================
+* A version control system (namely git) will be used to track changes to the 
+  code base over time.  This will be updated regularly and will be publicly 
+  available.
+
+.. break
+
+* Online documentation will be created, updated, and maintained.  This will 
+  be available through github.com for the time being.  
+
+.. break
+
+* A comprehensive user's manual will be written and then updated at least as 
+  frequently as the code release and grant schedule dictate.
+
 
 Final Note & Questions
 =======================
